@@ -74,33 +74,17 @@ def newtonraphson(f, f_, x0, tolerance=0.001, NMAX=100):
 
 
 # if __name__ == '__main__':
-def func(x):
-    """
-    Function x^3 - x -2
-    We will calculate the root of this function using different methods.
-   """
-    return (math.pow(x, 3) - x - 2)
-
-
-def func_(x):
-    """
-    Derivate of the function f(x) = x^3 - x -2
-    This will be used in Newton-Rafhson method.
-    """
-    return 3 * math.pow(x, 2) - 1
 
 
 # Invoking Bisection Method
 print('Invoking Bisection Method')
-res = bisection(func, 1, 2)
-print(res)
+print(bisection(lambda x: x ** 3 - x - 2, 1, 2))
 
 # Invoking Secant Method
 print('Invoking Secant Method')
-res = secant(func, 30, 10)
-print(res)
+print(secant(lambda x: x ** 3 - x - 2, 30, 10))
 
 # Invoking Newton Raphson Method
 print('Invoking Newton Raphson Method')
-res = newtonraphson(func, func_, -144.1131)
-print(res)
+print(newtonraphson(lambda x: x ** 3 - x - 2, lambda x: 3 * x ** 2 - 1,
+                    -144.1131))
