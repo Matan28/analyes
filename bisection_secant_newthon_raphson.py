@@ -1,7 +1,6 @@
 """
 Bisection, Secant & Newton Raphson Method.
 """
-
 import math
 
 """
